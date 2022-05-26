@@ -9,7 +9,6 @@ Data  *csvread(FILE *pr)
 		for (size_t i = 0; i < INIT_SIZE; i++)
 		{
 			object[i].col = object[i].rig = 0;
-			object[i].len = 0;
 			object[i].string = NULL;
 		}
 		
@@ -19,6 +18,7 @@ Data  *csvread(FILE *pr)
 		const char *sep = ",";
 		int rig = 0;
 		int i = 0;
+		
 		while(fgets(buff, BUFF_SIZE, pr))
 		{
 			
@@ -39,13 +39,12 @@ Data  *csvread(FILE *pr)
 					i++;
 				}
 
+
 				rig++;
 				
 		}	
 
-		object = realloc((void *)object, sizeof(Data)*i);
-		if (!object)
-			return NULL;
+		
 
 	return object;
 }
@@ -55,7 +54,8 @@ void free_mem(Data **my)
 
 	for (size_t i = 0; i < INIT_SIZE; i++)
 	{
-		free((*my)[i].string);
+		if((*my)[i].string)
+			free((*my)[i].string);
 	}
 	free(*my);
 

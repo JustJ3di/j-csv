@@ -21,9 +21,7 @@ typedef struct data Data;
 struct data
 {
 	int rig,col;
-	size_t len;
 	char *string;
-
 };
 
 int get_column(Data *);

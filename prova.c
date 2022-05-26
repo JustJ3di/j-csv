@@ -12,6 +12,8 @@ int main()
 
 	free_mem(&my);
 
+	fclose(pr);
+
 
 	return 0;
 
