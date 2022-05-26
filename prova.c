@@ -10,6 +10,8 @@ int main()
 
 	printf("%s %d %d\n",get_value(&my[10]), get_rig(&my[10]), get_column(&my[10]));
 
+	serialize(stdout , my);
+
 	free_mem(&my);
 
 	fclose(pr);

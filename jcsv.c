@@ -49,6 +49,28 @@ Data  *csvread(FILE *pr)
 	return object;
 }
 
+void serialize(FILE *pr, Data *csv)
+{
+		
+	for (size_t i = 0; i < INIT_SIZE; i++)
+	{
+		if(csv[i].string)
+		{
+			if(csv[i +1].rig == csv[i].rig)
+			{	
+				fprintf(pr, "%s", csv[i].string);
+				fprintf(pr , ",");
+			}else{
+				fprintf(pr, "%s", csv[i].string);
+			}
+		}
+	}
+	
+
+
+}
+
+
 void free_mem(Data **my)
 {
 

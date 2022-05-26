@@ -32,7 +32,7 @@ Data *csvread(FILE *);
 
 void free_mem(Data **);
 
-int serialize(FILE *);
+void serialize(FILE *,Data *);
 
 
 #endif
