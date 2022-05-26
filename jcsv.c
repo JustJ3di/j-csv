@@ -62,19 +62,12 @@ void free_mem(Data **my)
 }
 
 int get_column(Data *d){
-
 	return d->col;
-
 }
 int get_rig(Data *d){
-
-
 	return d->rig;
-
 }
 char *get_value(Data *d)
 {
-
 	return d->string;
-
 }

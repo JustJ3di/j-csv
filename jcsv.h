@@ -9,7 +9,7 @@
 /*csv parse*/
 
 #ifndef INIT_SIZE
-	#define INIT_SIZE 100
+	#define INIT_SIZE 4096
 #endif
 
 #ifndef BUFF_SIZE
